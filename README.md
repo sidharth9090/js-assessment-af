@@ -1,1 +1,2 @@
-# js-assessment-af
+### Run `yarn install`
+### Run `yarn dev`
