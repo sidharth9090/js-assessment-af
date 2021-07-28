@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>A&F Exercise 1</title>
+
+</head>
+
+<body>
+  <div>
+    <header>
+      <h1>Users</h1>
+    </header>
+    <div id="people-container"></div>
+  </div>
+  <script src="./assets/scripts/exercise1.js"></script>
+  <script type="text/javascript">
+    function myFunc(id, createdAt) {
+      let articleElement = document.getElementById(id);
+      if (articleElement.querySelector("button").innerText === "Show") {
+        articleElement.querySelector("button").innerText = "Hide";
+        let idElement = document.createElement("p");
+        let createdAtElement = document.createElement("p");
+        idElement.innerText = `Id: ${id}`;
+        createdAtElement.innerText = `CreatedAt: ${createdAt}`;
+        articleElement.querySelector("div").appendChild(idElement);
+        articleElement.querySelector("div").appendChild(createdAtElement);
+      } else {
+        articleElement.querySelector("button").innerText = "Show";
+        while (articleElement.querySelector("div p")) {
+          articleElement.querySelector("div").removeChild(articleElement.querySelector("div p"));
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
